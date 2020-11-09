@@ -88,11 +88,11 @@ public class FirstSeleniumTest {
         WebElement navBtnBlog = wd.findElement(By.xpath("//*[@id=\"nav\"]/ul/li[4]/a"));
         WebElement navBtnContact = wd.findElement(By.xpath("//*[@id=\"nav\"]/ul/li[5]/a"));
 
-        Assert.assertTrue(navBtnHome.getText().equalsIgnoreCase("home"), "Home button test");
-        Assert.assertTrue(navBtnAbout.getText().equalsIgnoreCase("about"), "About button test");
-        Assert.assertTrue(navBtnCourses.getText().equalsIgnoreCase("courses"), "Courses button test");
-        Assert.assertTrue(navBtnBlog.getText().equalsIgnoreCase("blog"), "Blog button test");
-        Assert.assertTrue(navBtnContact.getText().equalsIgnoreCase("contact"), "Contact button test");
+        Assert.assertEquals(navBtnHome.getText().toLowerCase(), "home");
+        Assert.assertEquals(navBtnAbout.getText().toLowerCase(), "about");
+        Assert.assertEquals(navBtnCourses.getText().toLowerCase(), "courses");
+        Assert.assertEquals(navBtnBlog.getText().toLowerCase(), "blog");
+        Assert.assertEquals(navBtnContact.getText().toLowerCase(), "contact");
     }
 
     @AfterClass
