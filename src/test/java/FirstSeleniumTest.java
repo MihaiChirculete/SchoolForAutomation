@@ -3,9 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import static org.testng.Assert.assertTrue;
 
@@ -13,7 +11,7 @@ public class FirstSeleniumTest {
 
     private WebDriver wd;
 
-    @BeforeTest
+    @BeforeClass
     public void init()
     {
         System.setProperty("webdriver.chrome.driver", "D:\\Programe\\chromedriver_win32\\chromedriver.exe");
@@ -90,14 +88,14 @@ public class FirstSeleniumTest {
         WebElement navBtnBlog = wd.findElement(By.xpath("//*[@id=\"nav\"]/ul/li[4]/a"));
         WebElement navBtnContact = wd.findElement(By.xpath("//*[@id=\"nav\"]/ul/li[5]/a"));
 
-        Assert.assertTrue(navBtnHome.getText().equalsIgnoreCase("home"));
-        Assert.assertTrue(navBtnAbout.getText().equalsIgnoreCase("about"));
-        Assert.assertTrue(navBtnCourses.getText().equalsIgnoreCase("courses"));
-        Assert.assertTrue(navBtnBlog.getText().equalsIgnoreCase("blog"));
-        Assert.assertTrue(navBtnContact.getText().equalsIgnoreCase("contact"));
+        Assert.assertTrue(navBtnHome.getText().equalsIgnoreCase("home"), "Home button test");
+        Assert.assertTrue(navBtnAbout.getText().equalsIgnoreCase("about"), "About button test");
+        Assert.assertTrue(navBtnCourses.getText().equalsIgnoreCase("courses"), "Courses button test");
+        Assert.assertTrue(navBtnBlog.getText().equalsIgnoreCase("blog"), "Blog button test");
+        Assert.assertTrue(navBtnContact.getText().equalsIgnoreCase("contact"), "Contact button test");
     }
 
-    @AfterTest
+    @AfterClass
     public void terminate()
     {
         wd.quit();
